@@ -1,3 +1,5 @@
+# Supply-Chain-Root-Cause-Analysis
+
 ## Executive Summary
 Our India supply-chain E-commerce network has experienced inconsistent delivery performance, inventory discrepancies, picking errors, and increasing operational costs. Using Python for data cleaning, PostgreSQL for analysis, I analyzed 40,000 orders across a six-month period to identify the main operational bottlenecks. The analysis found that some Dark Stores have very high late-delivery rates despite relatively low order volumes, indicating that poor performance is not only caused by capacity. Further analysis of picking, workers, inventory, shipments, carriers, and costs helped identify potential root causes. I recommend improving picking performance, inventory accuracy, replenishment routes, carrier management, and node-level SLA monitoring.
 
