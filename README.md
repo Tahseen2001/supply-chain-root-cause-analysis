@@ -21,19 +21,19 @@ The analysis of 40,000 orders over six months showed an overall late-delivery ra
 Further analysis identified operational issues across picking, workers, inventory, shipments, carriers, and costs. Some workers had consistently higher picking errors and DPMO, while the problem nodes also showed weaker inventory accuracy. Carrier analysis showed that some carriers performed well overall but experienced significantly higher delays on specific Dark Store routes.
 
 Based on these findings, I recommend:
--Improve picking processes and monitor high-DPMO workers.
--Increase cycle counts at nodes with high inventory shortages.
--Review carrier performance by specific route, not only overall carrier performance.
--Investigate replenishment delays to problem Dark Stores.
--Monitor node-level CPT, workload, capacity, and cost per order through Power BI.
--Prioritize operational improvements at Whitefield, Rohini, and Powai because they have high SLA problems despite lower order volumes.
+- Improve picking processes and monitor high-DPMO workers.
+- Increase cycle counts at nodes with high inventory shortages.
+- Review carrier performance by specific route, not only overall carrier performance.
+- Investigate replenishment delays to problem Dark Stores.
+- Monitor node-level CPT, workload, capacity, and cost per order through Power BI.
+- Prioritize operational improvements at Whitefield, Rohini, and Powai because they have high SLA problems despite lower order volumes.
 
 These changes should help reduce late deliveries, picking errors, inventory discrepancies, and unnecessary operating costs while improving customer experience.
 
 ## Next Steps:
-Build node-level CPT/SLA alerts.
-Review worker performance by shift and process.
-Analyze SKU-level inventory shortages and defects.
-Review carrier performance by route every week.
-Validate operational findings with supply-chain teams.
-Track before-and-after performance for the problem Dark Stores.
+- Build node-level CPT/SLA alerts.
+- Review worker performance by shift and process.
+- Analyze SKU-level inventory shortages and defects.
+- Review carrier performance by route every week.
+- Validate operational findings with supply-chain teams.
+- Track before-and-after performance for the problem Dark Stores.
