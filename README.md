@@ -1,6 +1,3 @@
-# supply-chain-root-cause-analysis
-End-to-end Indian e-commerce supply chain analytics using Python and PostgreSQL to identify operational bottlenecks, CPT breaches, inventory issues, logistics delays, and cost drivers.
-
 ## Executive Summary
 Our India supply-chain E-commerce network has experienced inconsistent delivery performance, inventory discrepancies, picking errors, and increasing operational costs. Using Python for data cleaning, PostgreSQL for analysis, I analyzed 40,000 orders across a six-month period to identify the main operational bottlenecks. The analysis found that some Dark Stores have very high late-delivery rates despite relatively low order volumes, indicating that poor performance is not only caused by capacity. Further analysis of picking, workers, inventory, shipments, carriers, and costs helped identify potential root causes. I recommend improving picking performance, inventory accuracy, replenishment routes, carrier management, and node-level SLA monitoring.
 
@@ -22,12 +19,12 @@ The analysis of 40,000 orders over six months showed an overall late-delivery ra
 Further analysis identified operational issues across picking, workers, inventory, shipments, carriers, and costs. Some workers had consistently higher picking errors and DPMO, while the problem nodes also showed weaker inventory accuracy. Carrier analysis showed that some carriers performed well overall but experienced significantly higher delays on specific Dark Store routes.
 
 Based on these findings, I recommend:
-Improve picking processes and monitor high-DPMO workers.
-Increase cycle counts at nodes with high inventory shortages.
-Review carrier performance by specific route, not only overall carrier performance.
-Investigate replenishment delays to problem Dark Stores.
-Monitor node-level CPT, workload, capacity, and cost per order through Power BI.
-Prioritize operational improvements at Whitefield, Rohini, and Powai because they have high SLA problems despite lower order volumes.
+-Improve picking processes and monitor high-DPMO workers.
+-Increase cycle counts at nodes with high inventory shortages.
+-Review carrier performance by specific route, not only overall carrier performance.
+-Investigate replenishment delays to problem Dark Stores.
+-Monitor node-level CPT, workload, capacity, and cost per order through Power BI.
+-Prioritize operational improvements at Whitefield, Rohini, and Powai because they have high SLA problems despite lower order volumes.
 
 These changes should help reduce late deliveries, picking errors, inventory discrepancies, and unnecessary operating costs while improving customer experience.
 
