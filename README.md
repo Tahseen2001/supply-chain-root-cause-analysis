@@ -1,13 +1,16 @@
-# Supply-Chain-Root-Cause-Analysis
-
 ## Executive Summary
-Our India supply-chain E-commerce network has experienced inconsistent delivery performance, inventory discrepancies, picking errors, and increasing operational costs. Using Python for data cleaning, PostgreSQL for analysis, I analyzed 40,000 orders across a six-month period to identify the main operational bottlenecks. The analysis found that some Dark Stores have very high late-delivery rates despite relatively low order volumes, indicating that poor performance is not only caused by capacity. Further analysis of picking, workers, inventory, shipments, carriers, and costs helped identify potential root causes. I recommend improving picking performance, inventory accuracy, replenishment routes, carrier management, and node-level SLA monitoring.
+Our India supply-chain E-commerce fulfillment network is experiencing a 5.00% CPT (Customer Promise Time) breach rate across 10 nodes, with 3 Dark Stores (Rohini, Whitefield, Powai) showing critical late-delivery rates of 85–95% — while handling only 4.71–5.88% utilization of their capacity. This is not an overload problem; it is a process and staffing problem. I analyzed 40,000 orders, 10 nodes, 8 carriers, across a six-month period to identify the main operational bottlenecks. The analysis found that some Dark Stores have very high late-delivery rates despite relatively low order volumes, indicating that poor performance is not only caused by capacity. Further analysis of picking, workers, inventory, shipments, carriers, and costs helped identify potential root causes. I recommend improving picking performance, inventory accuracy, replenishment routes, carrier management, and node-level SLA monitoring.
 
 ## Business Problem:
 On-time delivery is essential for this supply-chain company because delays directly affect customer satisfaction, cancellations, returns, and operating costs. Operations stakeholders need to understand which nodes are underperforming and why. How can we identify whether delays are caused by node workload, picking performance, inventory shortages, shipment/carrier issues, or operating costs?
 
 ## Methodology:
-Python was used to clean and prepare the 40,000-order dataset and connect the cleaned data to PostgreSQL.
+### 1. Data Pipeline
+- Loaded 6 raw CSVs (50,000 orders, 10 nodes, 8 carriers)
+- Cleaned in Python: standardized columns, fixed types, verified referential integrity
+- Loaded into PostgreSQL via SQLAlchemy
+- Built relationships between tables
+### 2. SQL Analysis
 PostgreSQL was used to investigate node capacity, daily workload, workers, DPMO, inventory shortages, carrier delays, shipments, and cost per order.
 
 ## Skills:
@@ -16,9 +19,8 @@ PostgreSQL: Data analysis, CPT/late-delivery analysis, DPMO, capacity utilizatio
 Python: Pandas, NumPy, data cleaning, data validation, PostgreSQL connection
 
 ## Results & Business Recommendation:
-The analysis of 40,000 orders over six months showed an overall late-delivery rate of approximately 13.88%. The biggest issue was concentrated in three lower-volume Dark Stores: Whitefield DS had 93.49% late deliveries, Rohini DS 88.16%, and Powai DS 83.89%. This showed that poor SLA performance was not simply a result of high order volume or capacity utilization.
-
-Further analysis identified operational issues across picking, workers, inventory, shipments, carriers, and costs. Some workers had consistently higher picking errors and DPMO, while the problem nodes also showed weaker inventory accuracy. Carrier analysis showed that some carriers performed well overall but experienced significantly higher delays on specific Dark Store routes.
+### Key Findings
+<img width="409" height="128" alt="image" src="https://github.com/user-attachments/assets/3d486214-edb6-4657-a520-3d1810c46bdf" />
 
 Based on these findings, I recommend:
 - Improve picking processes and monitor high-DPMO workers.
@@ -31,9 +33,8 @@ Based on these findings, I recommend:
 These changes should help reduce late deliveries, picking errors, inventory discrepancies, and unnecessary operating costs while improving customer experience.
 
 ## Next Steps:
-- Build node-level CPT/SLA alerts.
-- Review worker performance by shift and process.
-- Analyze SKU-level inventory shortages and defects.
-- Review carrier performance by route every week.
-- Validate operational findings with supply-chain teams.
-- Track before-and-after performance for the problem Dark Stores.
+1. **A/B test** peak-hour staffing at Whitefield for 2 weeks
+2. **Train** warehouse managers on new SKU placement SOP
+3. **Negotiate** with Carrier Ecom Express using this data
+4. **Roll out** dashboard to all node managers
+5. **Measure** impact after 30 days: CPT breach, cost per order, FTR
